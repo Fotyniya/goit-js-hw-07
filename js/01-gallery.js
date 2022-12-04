@@ -7,10 +7,8 @@ imgContainer.insertAdjacentHTML('beforeend', imagesMarkup);
 
 imgContainer.addEventListener("click", (event) => {
     event.preventDefault();
-    
-    if (!event.target.classList.contains('gallery__image')){
-        return;
-    }
+    if (event.target.nodeName !== "IMG") {
+        return;}
     
     const instance = basicLightbox.create(
         event.target.closest('.gallery__link').innerHTML, {
