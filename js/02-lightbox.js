@@ -4,8 +4,8 @@ const imgContainer = document.querySelector ('.gallery');
 const imagesMarkup = createImgCardsMarkup(galleryItems);
 
 imgContainer.insertAdjacentHTML('beforeend', imagesMarkup);
-    
-const lightbox = new SimpleLightbox('.gallery a');
+
+let gallery = new SimpleLightbox('.gallery a');
 
 function createImgCardsMarkup (galleryItems) {
     return galleryItems
@@ -16,12 +16,10 @@ function createImgCardsMarkup (galleryItems) {
       class = "gallery__image"
       src = "${preview}"
       data-source ="${original}"
-      alt = "${description}"
-      title = "${description}"
+      alt: title = "${description}"
     />
     </a>
     `;
     }).join('')
 }
-
-console.log(galleryItems);
+console.log (galleryItems)
