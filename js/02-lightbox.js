@@ -5,7 +5,9 @@ const imagesMarkup = createImgCardsMarkup(galleryItems);
 
 imgContainer.insertAdjacentHTML('beforeend', imagesMarkup);
 
-let gallery = new SimpleLightbox('.gallery a');
+const gallery = new SimpleLightbox(imgContainer.querySelectorAll('.gallery a'), {
+  captionsData: 'alt'
+  });
 
 function createImgCardsMarkup (galleryItems) {
     return galleryItems
@@ -16,10 +18,9 @@ function createImgCardsMarkup (galleryItems) {
       class = "gallery__image"
       src = "${preview}"
       data-source ="${original}"
-      alt: title = "${description}"
+      alt = "${description}"
     />
     </a>
     `;
     }).join('')
 }
-console.log (galleryItems)
